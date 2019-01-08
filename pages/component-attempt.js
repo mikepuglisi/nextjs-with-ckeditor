@@ -1,14 +1,9 @@
 import { Component } from 'react'
 import dynamic from 'next/dynamic'
-// import CKEditor from '../components/CKEditor'
 
 const CKEditor = dynamic(() => import('../components/CKEditor'), {
   ssr: false
 })
-
-// const ClassicEditor = dynamic(() => import('@ckeditor/ckeditor5-build-classic'), {
-//   ssr: false
-// })
 
 class ComponentAttempt extends Component {
   static getInitialProps({ req, query }) {
@@ -17,8 +12,7 @@ class ComponentAttempt extends Component {
   render() {
 
     return <div>
-
-      <CKEditor />
+      <CKEditor data="Some Default Data"/>
     </div>
   }
 }

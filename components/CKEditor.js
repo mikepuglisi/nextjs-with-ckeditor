@@ -1,20 +1,17 @@
 import { Component } from 'react'
 import dynamic from 'next/dynamic'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKEditor from '@ckeditor/ckeditor5-react';
 
-const CKEditorDynamic = dynamic(() => import('@ckeditor/ckeditor5-react'), {
-  ssr: false
-})
-
-class CKEditor extends Component {
+class CKEditorWrapper extends Component {
   render() {
     return <div>
-      <CKEditorDynamic
+      <CKEditor
           editor={ ClassicEditor }
-          data="<p>Hello from CKEditor 5!</p>"
+          {...this.props}
       />
     </div>
   }
 }
 
-export default CKEditor;
+export default CKEditorWrapper;
