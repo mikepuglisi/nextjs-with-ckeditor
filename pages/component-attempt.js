@@ -1,10 +1,10 @@
 import { Component } from 'react'
 import dynamic from 'next/dynamic'
-import CKEditor from '../components/CKEditor'
+// import CKEditor from '../components/CKEditor'
 
-// const CKEditor = dynamic(() => import('@ckeditor/ckeditor5-react'), {
-//   ssr: false
-// })
+const CKEditor = dynamic(() => import('../components/CKEditor'), {
+  ssr: false
+})
 
 // const ClassicEditor = dynamic(() => import('@ckeditor/ckeditor5-build-classic'), {
 //   ssr: false
